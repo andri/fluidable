@@ -1,6 +1,6 @@
-# Fluidable is a standalone, lightweight, flexible CSS grid system for designers and developers.
+# Fluidable is a standalone, lightweight, flexible CSS grid system
 
-fluidable.less includes everything you need, if anyone is interested it can be ported to other compiled languages with a breeze.
+fluidable.less includes everything you need. If anyone is interested, it could be ported to other compiled languages with a breeze.
 
 ## Docs
 
