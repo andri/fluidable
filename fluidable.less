@@ -3,14 +3,14 @@
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 21.03.2012
+ * Date: 17.05.2012
  */
 
 // Config
 
 @columns:       12;
 @maxWidth:	    960px;
-@gutterWidth:   2em;
+@gutterWidth:   32px;
 
 // Grid system
 
@@ -23,7 +23,9 @@
 
 .columns(@num: 1) {
 	width: @columnWidth * @num;
+	_width: @columnWidth * @num - 0.0694%; /* IE6-7 */
 	float: left;
+	display: inline;
 }
 
 .offset(@num: 1) {
@@ -31,19 +33,16 @@
 }
 
 .col-group {
+	margin: 0 @gutterWidth / 2;
 	.clear();
-}
-
-.col-group .col-first > .col-content {
-	margin-left: 0;
-}
-
-.col-group .col-last > .col-content {
-	margin-right: 0;
 }
 
 .col-group .col-group {
 	margin: 0;
+}
+
+.col-group .col-content {
+	margin: 0 @gutterWidth / 2;
 }
 
 .col-inset .col-content {
@@ -51,14 +50,19 @@
 	margin: 0;
 }
 
-.col-inset-one .col-content {
-	padding: @gutterWidth / 2;
+h1, h2, h3, h4, h5, h6 {
+	margin-right: @gutterWidth;
+	margin-left: @gutterWidth;
 }
 
+.col-group h1, .col-group h2, .col-group h3, .col-group h4, .col-group h5, .col-group h6 {
+	margin-right: @gutterWidth / 2;
+	margin-left: @gutterWidth / 2;
+}
 
-
-.col-group .col-content {
-	margin: 0 @gutterWidth / 2;
+.col-content h1, .col-content h2, .col-content h3, .col-content h4, .col-content h5, .col-content h6 {
+	margin-right: 0;
+	margin-left: 0;
 }
 
 // Default columns
@@ -102,12 +106,14 @@
 .col-eighteenth  { .columns(@columns / 18); }
 
 .col-golden-a {
-	width: 61.803399%
+	width: 61.803399%;
+	_width: 61.803399% - 0.0694%; /* IE6-7 */
 	float: left;
 }
 
 .col-golden-b {
-	width: 61.803399%
+	width: 38.196601%;
+	_width: 38.196601% - 0.0694%; /* IE6-7 */
 	float: left;
 }
 
