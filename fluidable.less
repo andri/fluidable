@@ -1,9 +1,9 @@
 /*!
- * Fluidable Grid System 0.8
+ * Fluidable Grid System 0.9
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 17.05.2012
+ * Date: 26.05.2013
  */
 
 // Config
@@ -21,16 +21,72 @@
 	.center-block();
 }
 
-.columns(@num: 1) {
-	width: @columnWidth * @num;
-	_width: @columnWidth * @num - 0.0694%; /* IE6-7 */
+// Columns
+
+.columns (@index) when (@index > 0) {
+	(~".col-@{index}") {
+		width: @columnWidth * @index;
+		_width: @columnWidth * @index - 0.0694%;
+		float: left;
+		display: inline;
+	}
+	.columns(@index - 1);
+}
+.columns (0) {}
+.columns (@columns);
+
+// Offset
+.offset (@index) when (@index > 0) {
+	(~".col-offset-@{index}") {
+		margin-left: @columnWidth * @index;
+		_margin-left: @columnWidth * @index - 0.0694%;
+	}
+	.offset(@index - 1);
+}
+.offset (0) {}
+.offset (@columns);
+
+// Named columns
+
+.named(@index) {
+	width: @columnWidth * @index;
+	_width: @columnWidth * @index - 0.0694%;
 	float: left;
 	display: inline;
 }
 
-.offset(@num: 1) {
-	margin-left: @columnWidth * @num;
+.col-full  { .named(@columns); }
+.col-half  { .named(@columns / 2); }
+.col-third  { .named(@columns / 3); }
+.col-fourth  { .named(@columns / 4); }
+.col-fifth  { .named(@columns / 5); }
+.col-sixth  { .named(@columns / 6); }
+.col-seventh  { .named(@columns / 7); }
+.col-eighth  { .named(@columns / 8); }
+.col-ninth  { .named(@columns / 9); }
+.col-tenth  { .named(@columns / 10); }
+.col-eleventh  { .named(@columns / 11); }
+.col-twelfth  { .named(@columns / 12); }
+.col-thirteenth  { .named(@columns / 13); }
+.col-fourteenth  { .named(@columns / 14); }
+.col-fifteenth  { .named(@columns / 15); }
+.col-sixteenth  { .named(@columns / 16); }
+.col-seventeenth  { .named(@columns / 17); }
+.col-eighteenth  { .named(@columns / 18); }
+
+.col-golden-a {
+	width: 61.803399%;
+	_width: 61.803399% - 0.0694%; /* IE6-7 */
+	float: left;
 }
+
+.col-golden-b {
+	width: 38.196601%;
+	_width: 38.196601% - 0.0694%; /* IE6-7 */
+	float: left;
+}
+
+// Groups
 
 .col-group {
 	margin: 0 @gutterWidth / 2;
@@ -50,6 +106,8 @@
 	margin: 0;
 }
 
+// Fix headline margins palced out side of columns
+
 h1, h2, h3, h4, h5, h6 {
 	margin-right: @gutterWidth;
 	margin-left: @gutterWidth;
@@ -64,79 +122,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin-right: 0;
 	margin-left: 0;
 }
-
-// Default columns
-
-.col-1     { .columns(1); }
-.col-2     { .columns(2); }
-.col-3     { .columns(3); }
-.col-4     { .columns(4); }
-.col-5     { .columns(5); }
-.col-6     { .columns(6); }
-.col-7     { .columns(7); }
-.col-8     { .columns(8); }
-.col-9     { .columns(9); }
-.col-10    { .columns(10); }
-.col-11    { .columns(11); }
-.col-12    { .columns(12); }
-.col-13    { .columns(13); }
-.col-14    { .columns(14); }
-.col-15    { .columns(15); }
-.col-16    { .columns(16); }
-.col-17    { .columns(17); }
-.col-18    { .columns(18); }
-
-.col-full  { .columns(@columns); }
-.col-half  { .columns(@columns / 2); }
-.col-third  { .columns(@columns / 3); }
-.col-fourth  { .columns(@columns / 4); }
-.col-fifth  { .columns(@columns / 5); }
-.col-sixth  { .columns(@columns / 6); }
-.col-seventh  { .columns(@columns / 7); }
-.col-eighth  { .columns(@columns / 8); }
-.col-ninth  { .columns(@columns / 9); }
-.col-tenth  { .columns(@columns / 10); }
-.col-eleventh  { .columns(@columns / 11); }
-.col-twelfth  { .columns(@columns / 12); }
-.col-thirteenth  { .columns(@columns / 13); }
-.col-fourteenth  { .columns(@columns / 14); }
-.col-fifteenth  { .columns(@columns / 15); }
-.col-sixteenth  { .columns(@columns / 16); }
-.col-seventeenth  { .columns(@columns / 17); }
-.col-eighteenth  { .columns(@columns / 18); }
-
-.col-golden-a {
-	width: 61.803399%;
-	_width: 61.803399% - 0.0694%; /* IE6-7 */
-	float: left;
-}
-
-.col-golden-b {
-	width: 38.196601%;
-	_width: 38.196601% - 0.0694%; /* IE6-7 */
-	float: left;
-}
-
-// Offset
-
-.col-offset-1     { .offset(1); }
-.col-offset-2     { .offset(2); }
-.col-offset-3     { .offset(3); }
-.col-offset-4     { .offset(4); }
-.col-offset-5     { .offset(5); }
-.col-offset-6     { .offset(6); }
-.col-offset-7     { .offset(7); }
-.col-offset-8     { .offset(8); }
-.col-offset-9     { .offset(9); }
-.col-offset-10    { .offset(10); }
-.col-offset-11    { .offset(11); }
-.col-offset-12    { .offset(12); }
-.col-offset-13    { .offset(13); }
-.col-offset-14    { .offset(14); }
-.col-offset-15    { .offset(15); }
-.col-offset-16    { .offset(16); }
-.col-offset-17    { .offset(17); }
-
 
 // Positioning
 
