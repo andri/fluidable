@@ -24,7 +24,7 @@
 // Columns
 
 .columns (@index) when (@index > 0) {
-	(~".col-@{index}") {
+	.col-@{index} {
 		width: @columnWidth * @index;
 		_width: @columnWidth * @index - 0.0694%;
 		float: left;
@@ -37,7 +37,7 @@
 
 // Offset
 .offset (@index) when (@index > 0) {
-	(~".col-offset-@{index}") {
+	.col-offset-@{index} {
 		margin-left: @columnWidth * @index;
 		_margin-left: @columnWidth * @index - 0.0694%;
 	}
