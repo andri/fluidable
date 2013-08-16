@@ -3,7 +3,7 @@
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 26.05.2013
+ * Date: 16.08.2013
  */
 
 // Config
@@ -22,12 +22,12 @@
 }
 
 // Columns
-
 .columns (@index) when (@index > 0) {
 	.col-@{index} {
 		width: @columnWidth * @index;
 		_width: @columnWidth * @index - 0.0694%;
 		float: left;
+		position: relative;
 		display: inline;
 	}
 	.columns(@index - 1);
@@ -45,6 +45,26 @@
 }
 .offset (0) {}
 .offset (@columns);
+
+// Pull
+.pull (@index) when (@index > 0) {
+	.col-pull-@{index} {
+		right: @columnWidth * @index;
+	}
+	.pull(@index - 1);
+}
+.pull (0) {}
+.pull (@columns);
+
+// Push
+.push (@index) when (@index > 0) {
+	.col-push-@{index} {
+		left: @columnWidth * @index;
+	}
+	.push(@index - 1);
+}
+.push (0) {}
+.push (@columns);
 
 // Named columns
 
