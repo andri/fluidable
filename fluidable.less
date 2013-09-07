@@ -1,167 +1,215 @@
 /*!
- * Fluidable Grid System 1.0
+ * Fluidable Grid System 1.1
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 16.08.2013
+ * Date: 05.09.2013
  */
 
-// Config
+/*
+	
+	Config
+
+*/
+
+// Grid
 
 @columns:       12;
-@maxWidth:	    960px;
 @gutterWidth:   32px;
 
-// Grid system
+// Column size
 
-@columnWidth: 100%/@columns;
+@columnWidth: 	100%/@columns;
 
-.page {
-	max-width: @maxWidth;
-	.center-block();
+// Break-points
+
+@screenTablet: 	768px;
+@screenDesktop: 992px; // Not implemented yet
+
+
+/*
+ 	
+	Mobile and up
+ 
+*/
+
+.col-group {
+	.clear();
+}
+
+.col-group [class*="col-"] {
+	padding-left: @gutterWidth / 2;
+	padding-right: @gutterWidth / 2;
+	float: left;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.col-group [class*="push-"],
+.col-group [class*="pull-"] {
+	position: relative;
 }
 
 // Columns
+
 .columns (@index) when (@index > 0) {
-	.col-@{index} {
+	.col-mb-@{index} {
 		width: @columnWidth * @index;
-		_width: @columnWidth * @index - 0.0694%;
-		float: left;
-		position: relative;
-		display: inline;
+		padding-right: @gutterWidth / 2;
+		padding-left: @gutterWidth / 2;
 	}
 	.columns(@index - 1);
 }
 .columns (0) {}
 .columns (@columns);
 
-// Offset
-.offset (@index) when (@index > 0) {
-	.col-offset-@{index} {
-		margin-left: @columnWidth * @index;
-		_margin-left: @columnWidth * @index - 0.0694%;
+
+/*
+ 	
+	Tablet and up
+ 
+*/
+
+@media (min-width: @screenTablet) {
+
+	.container {
+		max-width: @screenTablet - (@gutterWidth * 2);
+		.center-block();
 	}
-	.offset(@index - 1);
-}
-.offset (0) {}
-.offset (@columns);
 
-// Pull
-.pull (@index) when (@index > 0) {
-	.col-pull-@{index} {
-		right: @columnWidth * @index;
+	// Columns
+
+	.columns (@index) when (@index > 0) {
+		.col-@{index} {
+			width: @columnWidth * @index;
+		}
+		.columns(@index - 1);
 	}
-	.pull(@index - 1);
-}
-.pull (0) {}
-.pull (@columns);
+	.columns (0) {}
+	.columns (@columns);
 
-// Push
-.push (@index) when (@index > 0) {
-	.col-push-@{index} {
-		left: @columnWidth * @index;
+
+	// Offset
+
+	.offset (@index) when (@index > -1) {
+		.col-offset-@{index} {
+			margin-left: @columnWidth * @index;
+		}
+		.offset(@index - 1);
 	}
-	.push(@index - 1);
-}
-.push (0) {}
-.push (@columns);
+	.offset (0) {}
+	.offset (@columns);
 
-// Named columns
 
-.named(@index) {
-	width: @columnWidth * @index;
-	_width: @columnWidth * @index - 0.0694%;
-	float: left;
-	display: inline;
-}
+	// Pull
 
-.col-full  { .named(@columns); }
-.col-half  { .named(@columns / 2); }
-.col-third  { .named(@columns / 3); }
-.col-fourth  { .named(@columns / 4); }
-.col-fifth  { .named(@columns / 5); }
-.col-sixth  { .named(@columns / 6); }
-.col-seventh  { .named(@columns / 7); }
-.col-eighth  { .named(@columns / 8); }
-.col-ninth  { .named(@columns / 9); }
-.col-tenth  { .named(@columns / 10); }
-.col-eleventh  { .named(@columns / 11); }
-.col-twelfth  { .named(@columns / 12); }
-.col-thirteenth  { .named(@columns / 13); }
-.col-fourteenth  { .named(@columns / 14); }
-.col-fifteenth  { .named(@columns / 15); }
-.col-sixteenth  { .named(@columns / 16); }
-.col-seventeenth  { .named(@columns / 17); }
-.col-eighteenth  { .named(@columns / 18); }
+	.pull (@index) when (@index > -1) {
+		.col-pull-@{index} {
+			right: @columnWidth * @index;
+		}
+		.pull(@index - 1);
+	}
+	.pull (0) {}
+	.pull (@columns);
 
-.col-golden-a {
-	width: 61.803399%;
-	_width: 61.803399% - 0.0694%; /* IE6-7 */
-	float: left;
-}
 
-.col-golden-b {
-	width: 38.196601%;
-	_width: 38.196601% - 0.0694%; /* IE6-7 */
-	float: left;
+	// Push
+
+	.push (@index) when (@index > -1) {
+		.col-push-@{index} {
+			left: @columnWidth * @index;
+		}
+		.push(@index - 1);
+	}
+	.push (0) {}
+	.push (@columns);
+
+
+	// Groups
+
+	.col-group {
+		margin-right: @gutterWidth / -2;
+		margin-left: @gutterWidth / -2;
+		.clear();
+	}
+
 }
 
-// Groups
+/*
+ 	
+	Desktop and up
+ 
+*/
 
-.col-group {
-	margin: 0 @gutterWidth / 2;
-	.clear();
+@media (min-width: @screenDesktop) {
+
+	.container {
+		max-width: @screenDesktop  - (@gutterWidth * 2);
+		.center-block();
+	}
+
+	// Columns
+
+	.columns (@index) when (@index > 0) {
+		.col-dt-@{index} {
+			width: @columnWidth * @index;
+		}
+		.columns(@index - 1);
+	}
+	.columns (0) {}
+	.columns (@columns);
+
+
+	// Offset
+
+	.offset (@index) when (@index > -1) {
+		.col-dt-offset-@{index} {
+			margin-left: @columnWidth * @index;
+		}
+		.offset(@index - 1);
+	}
+	.offset (0) {}
+	.offset (@columns);
+
+
+	// Pull
+
+	.pull (@index) when (@index > -1) {
+		.col-dt-pull-@{index} {
+			right: @columnWidth * @index;
+		}
+		.pull(@index - 1);
+	}
+	.pull (0) {}
+	.pull (@columns);
+
+
+	// Push
+
+	.push (@index) when (@index > -1) {
+		.col-dt-push-@{index} {
+			left: @columnWidth * @index;
+		}
+		.push(@index - 1);
+	}
+	.push (0) {}
+	.push (@columns);
+
 }
 
-.col-group .col-group {
-	margin: 0;
-}
 
-.col-group .col-content {
-	margin: 0 @gutterWidth / 2;
-}
-
-.col-inset .col-content {
-	padding: @gutterWidth / 2;
-	margin: 0;
-}
-
-// Fix headline margins palced out side of columns
-
-h1, h2, h3, h4, h5, h6 {
-	margin-right: @gutterWidth;
-	margin-left: @gutterWidth;
-}
-
-.col-group h1, .col-group h2, .col-group h3, .col-group h4, .col-group h5, .col-group h6 {
-	margin-right: @gutterWidth / 2;
-	margin-left: @gutterWidth / 2;
-}
-
-.col-content h1, .col-content h2, .col-content h3, .col-content h4, .col-content h5, .col-content h6 {
-	margin-right: 0;
-	margin-left: 0;
-}
+/*
+ 	
+	Other
+ 
+*/
 
 // Positioning
 
 .center-block {
 	margin: 0 auto;
-}
-
-// Mobile
-
-@media screen and (max-width: 768px) {
-	.col-group [class*="col-"] {
-		width: auto;
-		float: none;
-	}
-	.col-group .col-content {
-		margin: 0;
-	}
-	.col-group [class*="offset-"] {
-		margin-left: 0;
-	}
 }
 
 // Clearfix
