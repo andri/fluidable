@@ -1,9 +1,9 @@
 /*!
- * Fluidable Grid System 1.1.2
+ * Fluidable Grid System 1.1.3
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 07.08.2014
+ * Date: 24.11.2014
  */
 /*
 	
@@ -26,8 +26,8 @@
   content: ".";
 }
 .col-group [class*="col-"] {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
   min-height: 1px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -43,74 +43,74 @@
 .col-mb-12 {
   width: 100%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-11 {
   width: 91.66666667%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-10 {
   width: 83.33333333%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-9 {
   width: 75%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-8 {
   width: 66.66666667%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-7 {
   width: 58.33333333%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-6 {
   width: 50%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-5 {
   width: 41.66666667%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-4 {
   width: 33.33333333%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-3 {
   width: 25%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-2 {
   width: 16.66666667%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 .col-mb-1 {
   width: 8.33333333%;
   float: left;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 /*
  	
@@ -119,7 +119,7 @@
 */
 @media (min-width: 768px) {
   .container {
-    max-width: 704px;
+    max-width: 696px;
     margin: 0 auto;
   }
   .col-12 {
@@ -288,8 +288,8 @@
     left: 0%;
   }
   .col-group {
-    margin-right: -16px;
-    margin-left: -16px;
+    margin-right: -18px;
+    margin-left: -18px;
     zoom: 1;
   }
   .col-group:after {
@@ -307,7 +307,7 @@
 */
 @media (min-width: 992px) {
   .container {
-    max-width: 928px;
+    max-width: 920px;
     margin: 0 auto;
   }
   .col-dt-12 {
@@ -483,7 +483,7 @@
 */
 @media (min-width: 1200px) {
   .container {
-    max-width: 1136px;
+    max-width: 1128px;
     margin: 0 auto;
   }
   .col-ld-12 {
@@ -651,6 +651,47 @@
   .col-ld-push-0 {
     left: 0%;
   }
+}
+/*
+
+	Fixed aspect ratio columns
+
+*/
+.col-fixed-hd,
+.col-fixed-landscape,
+.col-fixed-square,
+.col-fixed-portrait {
+  position: relative;
+}
+.col-fixed-hd:before,
+.col-fixed-landscape:before,
+.col-fixed-square:before,
+.col-fixed-portrait:before {
+  content: "";
+  display: block;
+}
+.col-fixed-hd .col-content,
+.col-fixed-landscape .col-content,
+.col-fixed-square .col-content,
+.col-fixed-portrait .col-content {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  bottom: 0;
+  left: 18px;
+  padding: 0;
+}
+.col-fixed-hd:before {
+  margin-top: 56.25%;
+}
+.col-fixed-landscape:before {
+  margin-top: 75%;
+}
+.col-fixed-square:before {
+  margin-top: 100%;
+}
+.col-fixed-portrait:before {
+  margin-top: 133.33333333%;
 }
 /*
  	
