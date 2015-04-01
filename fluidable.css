@@ -15,6 +15,10 @@
 	Mobile and up
  
 */
+.col-group [class*="col-fixed-"] {
+  float: left;
+  width: 100%;
+}
 .col-group {
   zoom: 1;
 }
