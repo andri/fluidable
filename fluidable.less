@@ -1,5 +1,5 @@
 /*!
- * Fluidable Grid System 1.2.1
+ * Fluidable Grid System 1.2.2
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
@@ -40,20 +40,19 @@
 }
 
 .col-group {
+	padding: 0 @gutterWidth;
 	.clear();
-}
-
-.col-group [class*="col-"] {
-	padding-left: @gutterWidth / 2;
-	padding-right: @gutterWidth / 2;
-	min-height: 1px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 .col-group .col-group {
 	padding: 0;
+}
+
+.col-group [class*="col-"] {
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .col-group [class*="push-"],
@@ -93,6 +92,8 @@
 
 	.columns (@index) when (@index > 0) {
 		.col-@{index} {
+			padding-left: @gutterWidth / 2;
+			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
@@ -143,6 +144,7 @@
 	.col-group {
 		margin-right: @gutterWidth / -2;
 		margin-left: @gutterWidth / -2;
+		padding: 0;
 		.clear();
 	}
 
@@ -165,6 +167,8 @@
 
 	.columns (@index) when (@index > 0) {
 		.col-dt-@{index} {
+			padding-left: @gutterWidth / 2;
+			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
@@ -229,6 +233,8 @@
 
 	.columns (@index) when (@index > 0) {
 		.col-ld-@{index} {
+			padding-left: @gutterWidth / 2;
+			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}

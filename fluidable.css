@@ -1,5 +1,5 @@
 /*!
- * Fluidable Grid System 1.2.1
+ * Fluidable Grid System 1.2.2
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
@@ -20,6 +20,7 @@
   width: 100%;
 }
 .col-group {
+  padding: 0 36px;
   zoom: 1;
 }
 .col-group:after {
@@ -29,16 +30,14 @@
   clear: both;
   content: ".";
 }
+.col-group .col-group {
+  padding: 0;
+}
 .col-group [class*="col-"] {
-  padding-left: 18px;
-  padding-right: 18px;
   min-height: 1px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-.col-group .col-group {
-  padding: 0;
 }
 .col-group [class*="push-"],
 .col-group [class*="pull-"] {
@@ -127,50 +126,74 @@
     margin: 0 auto;
   }
   .col-12 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 100%;
     float: left;
   }
   .col-11 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 91.66666667%;
     float: left;
   }
   .col-10 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 83.33333333%;
     float: left;
   }
   .col-9 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 75%;
     float: left;
   }
   .col-8 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 66.66666667%;
     float: left;
   }
   .col-7 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 58.33333333%;
     float: left;
   }
   .col-6 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 50%;
     float: left;
   }
   .col-5 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 41.66666667%;
     float: left;
   }
   .col-4 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 33.33333333%;
     float: left;
   }
   .col-3 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 25%;
     float: left;
   }
   .col-2 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 16.66666667%;
     float: left;
   }
   .col-1 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 8.33333333%;
     float: left;
   }
@@ -294,6 +317,7 @@
   .col-group {
     margin-right: -18px;
     margin-left: -18px;
+    padding: 0;
     zoom: 1;
   }
   .col-group:after {
@@ -315,50 +339,74 @@
     margin: 0 auto;
   }
   .col-dt-12 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 100%;
     float: left;
   }
   .col-dt-11 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 91.66666667%;
     float: left;
   }
   .col-dt-10 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 83.33333333%;
     float: left;
   }
   .col-dt-9 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 75%;
     float: left;
   }
   .col-dt-8 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 66.66666667%;
     float: left;
   }
   .col-dt-7 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 58.33333333%;
     float: left;
   }
   .col-dt-6 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 50%;
     float: left;
   }
   .col-dt-5 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 41.66666667%;
     float: left;
   }
   .col-dt-4 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 33.33333333%;
     float: left;
   }
   .col-dt-3 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 25%;
     float: left;
   }
   .col-dt-2 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 16.66666667%;
     float: left;
   }
   .col-dt-1 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 8.33333333%;
     float: left;
   }
@@ -491,50 +539,74 @@
     margin: 0 auto;
   }
   .col-ld-12 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 100%;
     float: left;
   }
   .col-ld-11 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 91.66666667%;
     float: left;
   }
   .col-ld-10 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 83.33333333%;
     float: left;
   }
   .col-ld-9 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 75%;
     float: left;
   }
   .col-ld-8 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 66.66666667%;
     float: left;
   }
   .col-ld-7 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 58.33333333%;
     float: left;
   }
   .col-ld-6 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 50%;
     float: left;
   }
   .col-ld-5 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 41.66666667%;
     float: left;
   }
   .col-ld-4 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 33.33333333%;
     float: left;
   }
   .col-ld-3 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 25%;
     float: left;
   }
   .col-ld-2 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 16.66666667%;
     float: left;
   }
   .col-ld-1 {
+    padding-left: 18px;
+    padding-right: 18px;
     width: 8.33333333%;
     float: left;
   }
