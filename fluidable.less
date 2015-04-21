@@ -1,5 +1,5 @@
 /*!
- * Fluidable Grid System 1.2.2
+ * Fluidable Grid System 1.2.3
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
@@ -61,17 +61,17 @@
 
 // Columns
 
-.columns (@index) when (@index > 0) {
+.fluidable (@index) when (@index > 0) {
 	.col-mb-@{index} {
 		width: @columnWidth * @index;
 		float: left;
 		padding-right: @gutterWidth / 2;
 		padding-left: @gutterWidth / 2;
 	}
-	.columns(@index - 1);
+	.fluidable(@index - 1);
 }
-.columns (0) {}
-.columns (@columns);
+.fluidable (0) {}
+.fluidable (@columns);
 
 
 /*
@@ -89,17 +89,17 @@
 
 	// Columns
 
-	.columns (@index) when (@index > 0) {
+	.fluidable (@index) when (@index > 0) {
 		.col-@{index} {
 			padding-left: @gutterWidth / 2;
 			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
-		.columns(@index - 1);
+		.fluidable(@index - 1);
 	}
-	.columns (0) {}
-	.columns (@columns);
+	.fluidable (0) {}
+	.fluidable (@columns);
 
 
 	// Offset
@@ -164,17 +164,17 @@
 
 	// Columns
 
-	.columns (@index) when (@index > 0) {
+	.fluidable (@index) when (@index > 0) {
 		.col-dt-@{index} {
 			padding-left: @gutterWidth / 2;
 			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
-		.columns(@index - 1);
+		.fluidable(@index - 1);
 	}
-	.columns (0) {}
-	.columns (@columns);
+	.fluidable (0) {}
+	.fluidable (@columns);
 
 
 	// Offset
@@ -230,17 +230,17 @@
 
 	// Columns
 
-	.columns (@index) when (@index > 0) {
+	.fluidable (@index) when (@index > 0) {
 		.col-ld-@{index} {
 			padding-left: @gutterWidth / 2;
 			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
-		.columns(@index - 1);
+		.fluidable(@index - 1);
 	}
-	.columns (0) {}
-	.columns (@columns);
+	.fluidable (0) {}
+	.fluidable (@columns);
 
 
 	// Offset
