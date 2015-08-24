@@ -1,9 +1,9 @@
 /*!
- * Fluidable Grid System 1.2.3
+ * Fluidable Grid System 1.2.4
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 01.04.2015
+ * Date: 24.10.2015
  */
 
 /*
@@ -342,12 +342,9 @@
 // Clearfix
 
 .clear {
-	zoom: 1;
 	&:after {
-    	display: block;
-		visibility: hidden;
-    	height: 0;
+    	display: table;
     	clear: both;
-    	content: ".";
+    	content: " ";
 	}
 }
