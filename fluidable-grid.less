@@ -1,0 +1,89 @@
+
+/*
+ 	
+	Grid
+ 
+*/
+
+
+
+.col-group {
+	margin-right: @gutterWidth / -2;
+	margin-left: @gutterWidth / -2;
+	padding: 0 @gutterWidth;
+	.clear();
+}
+
+.col-group .col-group {
+	padding: 0;
+}
+
+.col-group [class*="col-"] {
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.col-group [class*="push-"],
+.col-group [class*="pull-"] {
+	position: relative;
+}
+
+// Clearfix
+
+.clear {
+	&:after {
+    	display: table;
+    	clear: both;
+    	content: " ";
+	}
+}
+
+
+.createbreakpoints(@x:1) when(@x <= length(@breakPoints)) {
+    @name: extract(extract(@breakPoints, @x),1);
+    @media (min-width: extract(extract(@breakPoints, @x),2)) {
+		.container {
+			max-width: extract(extract(@breakPoints, @x),2) - (@gutterWidth * 2);
+			.center-block();
+		}
+    	.createcolclasses(@y:1) when(@y <= @columns) {
+    		.col-@{name}-@{y} {
+    			width: @columnWidth * @y;
+				float: left;
+				padding-right: @gutterWidth / 2;
+				padding-left: @gutterWidth / 2;
+    		}
+    		.createcolclasses((@y + 1));
+    	}
+    	.createcolclasses();
+    	.createpullpushclasses(@y:0) when(@y <= @columns) {
+    		.col-@{name}-offset-@{y} {
+ 				margin-left: @columnWidth * @y;
+ 			}
+ 			.col-@{name}-pull-@{y} {
+				right: @columnWidth * @y;
+			}
+			.col-@{name}-push-@{y} {
+				left: @columnWidth * @y;
+			}
+    		.createpullpushclasses((@y + 1));
+    	}
+    	.createpullpushclasses();
+	}
+    .createbreakpoints((@x + 1));
+}
+.createbreakpoints();
+
+// @media (min-width: extract(extract(@breakPoints, 2),2)) {
+// 	.col-group {
+// 		margin-right: @gutterWidth / -2;
+// 		margin-left: @gutterWidth / -2;
+// 		padding: 0;
+// 		.clear();
+// 	}
+// }
+
+
+
