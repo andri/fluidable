@@ -1,20 +1,10 @@
 /*!
- * Fluidable Grid System 1.2.5
+ * Fluidable Grid System 1.3
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 24.10.2015
+ * Date: 31.05.2016
  */
-/*
-	
-	Config
-
-*/
-/*
- 	
-	Mobile and up
- 
-*/
 [class*="col-fixed-"] {
   float: left;
   width: 100%;
@@ -112,11 +102,6 @@
   padding-right: 18px;
   padding-left: 18px;
 }
-/*
- 	
-	Tablet and up
- 
-*/
 @media (min-width: 768px) {
   .container {
     max-width: 696px;
@@ -322,11 +307,6 @@
     content: " ";
   }
 }
-/*
- 	
-	Desktop and up
- 
-*/
 @media (min-width: 992px) {
   .container {
     max-width: 920px;
@@ -522,11 +502,6 @@
     left: 0%;
   }
 }
-/*
- 	
-	Large desktop and up
- 
-*/
 @media (min-width: 1200px) {
   .container {
     max-width: 1128px;
@@ -722,11 +697,6 @@
     left: 0%;
   }
 }
-/*
-
-	Fixed aspect ratio columns
-
-*/
 .col-fixed-hd,
 .col-fixed-landscape,
 .col-fixed-square,
@@ -763,11 +733,6 @@
 .col-fixed-portrait:before {
   margin-top: 133.33333333%;
 }
-/*
- 	
-	Other
- 
-*/
 .center-block {
   margin: 0 auto;
 }
