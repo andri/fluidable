@@ -35,7 +35,8 @@
 }
 
 .col-group {
-	padding: 0 @gutterWidth;
+	margin-right: @gutterWidth / -2;
+	margin-left: @gutterWidth / -2;
 	.clear();
 }
 
@@ -48,6 +49,8 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	padding-right: @gutterWidth / 2;
+	padding-left: @gutterWidth / 2;
 }
 
 .col-group [class*="push-"],
@@ -61,8 +64,6 @@
 	.col-mb-@{index} {
 		width: @columnWidth * @index;
 		float: left;
-		padding-right: @gutterWidth / 2;
-		padding-left: @gutterWidth / 2;
 	}
 	.fluidable(@index - 1);
 }
@@ -85,8 +86,6 @@
 
 	.fluidable (@index) when (@index > 0) {
 		.col-@{index} {
-			padding-left: @gutterWidth / 2;
-			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
@@ -130,17 +129,6 @@
 	}
 	.push (0) {}
 	.push (@columns);
-
-
-	// Groups
-
-	.col-group {
-		margin-right: @gutterWidth / -2;
-		margin-left: @gutterWidth / -2;
-		padding: 0;
-		.clear();
-	}
-
 }
 
 //	
@@ -158,8 +146,6 @@
 
 	.fluidable (@index) when (@index > 0) {
 		.col-dt-@{index} {
-			padding-left: @gutterWidth / 2;
-			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
@@ -222,8 +208,6 @@
 
 	.fluidable (@index) when (@index > 0) {
 		.col-ld-@{index} {
-			padding-left: @gutterWidth / 2;
-			padding-right: @gutterWidth / 2;
 			width: @columnWidth * @index;
 			float: left;
 		}
