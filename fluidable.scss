@@ -1,0 +1,220 @@
+
+
+$columns:       12;
+$gutterWidth:   36px;
+
+// Column size
+
+$columnWidth: 	100%/ $columns;
+
+// Break-points
+
+$screenTablet: 	768px;
+$screenDesktop: 992px;
+$screenLarge:   1200px;
+
+@mixin clear() {
+	&:after {
+    	display: table;
+    	clear: both;
+    	content: " ";
+	}
+}
+
+@mixin center-block(){
+  margin: 0 auto;
+}
+@mixin gen-col($index: 0, $type: none) {
+  @while $index > 0 {
+    @if $type == none {
+      .col-#{$index} {
+			padding-left: $gutterWidth / 2;
+			padding-right: $gutterWidth / 2;
+			width: $columnWidth * $index;
+			float: left;
+		}
+    }	@else {
+		  .col-#{$type}-#{$index} {
+		    padding-left: $gutterWidth / 2;
+  			padding-right: $gutterWidth / 2;
+  			width: $columnWidth * $index;
+  			float: left;
+    	}
+	}
+ 	
+		$index: $index - 1;
+  }
+}
+
+@mixin gen-pull($index: 0, $type: none) {
+  @while $index > 0 {
+    @if $type == none {
+      .col-pull-#{$index} {
+			right: $columnWidth * $index;
+		}
+    }	@else {
+		  .col-#{$type}-pull-#{$index} {
+		    right: $columnWidth * $index;
+    	}
+	}
+ 	
+		$index: $index - 1;
+  }
+}
+
+@mixin gen-offset($index: 0, $type: none) {
+  @while $index > 0 {
+    @if $type == none {
+      .col-offset-#{$index} {
+			margin-left: $columnWidth * $index;
+		}
+    }	@else {
+		  .col-#{$type}-offset-#{$index} {
+		    margin-left: $columnWidth * $index;
+    	}
+	}
+ 	
+		$index: $index - 1;
+  }
+}
+
+@mixin gen-push($index: 0, $type: none) {
+  @while $index > 0 {
+    @if $type == none {
+      .col-push-#{$index} {
+			left: $columnWidth * $index;
+		}
+    }	@else {
+		  .col-#{$type}-push-#{$index} {
+		    left: $columnWidth * $index;
+    	}
+	}
+ 	
+		$index: $index - 1;
+  }
+}
+
+[class*="col-fixed-"] {
+  float: left;
+  width: 100%;
+}
+
+.col-group {
+	padding: 0 $gutterWidth;
+	@include clear();
+}
+
+.col-group .col-group {
+	padding: 0;
+}
+
+.col-group [class*="col-"] {
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.col-group [class*="push-"],
+.col-group [class*="pull-"] {
+	position: relative;
+}
+
+@include gen-col($columns, mb);
+
+@media (min-width: $screenTablet) {
+
+	.container {
+		max-width: $screenTablet - ($gutterWidth * 2);
+		@include center-block;
+	}
+	@include gen-col($columns);
+	@include gen-offset($columns);
+	@include gen-pull($columns);
+	@include gen-push($columns);
+	.col-group {
+	  margin-right: $gutterWidth / -2;
+		margin-left: $gutterWidth / -2;
+		padding: 0;
+		@include clear();
+	}
+	
+}	
+
+@media (min-width: $screenDesktop) {
+
+	.container {
+		max-width: $screenDesktop - ($gutterWidth * 2);
+		@include center-block;
+	}
+	@include gen-col($columns, dt);
+	@include gen-offset($columns, dt);
+	@include gen-pull($columns, dt);
+	@include gen-push($columns, dt);
+
+}	
+
+@media (min-width: $screenLarge) {
+
+	.container {
+		max-width: $screenLarge - ($gutterWidth * 2);
+		@include center-block;
+	}
+	@include gen-col($columns, ld);
+	@include gen-offset($columns, ld);
+	@include gen-pull($columns, ld);
+	@include gen-push($columns, ld);
+
+}	
+
+.col-fixed-hd,
+.col-fixed-landscape,
+.col-fixed-square,
+.col-fixed-portrait {
+	position: relative;
+}
+
+.col-fixed-hd:before,
+.col-fixed-landscape:before,
+.col-fixed-square:before,
+.col-fixed-portrait:before {
+	content: "";
+	display: block;
+}
+
+.col-fixed-hd .col-content, 
+.col-fixed-hd-wide .col-conent,
+.col-fixed-landscape .col-content, 
+.col-fixed-square .col-content, 
+.col-fixed-portrait .col-content {
+	position: absolute;
+  width: 100%;
+  height: 100%;
+	top: 0;
+	right: 0; 
+	bottom: 0; 
+	left: 0;
+	padding: 0;
+}
+
+
+
+.col-fixed-hd:before {
+	margin-top: 56.25%;
+}
+
+.col-fixed-hd-wide:before {
+    margin-top: 42.857143%;
+ 
+}  
+.col-fixed-landscape:before {
+	margin-top: 75%;
+}
+
+.col-fixed-square:before {
+	margin-top: 100%;
+}
+
+.col-fixed-portrait:before {
+	margin-top: 133.33333333%;
+}
