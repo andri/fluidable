@@ -1,5 +1,5 @@
 /*!
- * Fluidable Grid System 1.3
+ * Fluidable Grid System 1.3.1
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
@@ -68,6 +68,41 @@
 }
 .fluidable (0) {}
 .fluidable (@columns);
+
+// Offset
+
+.offset (@index) when (@index > -1) {
+	.col-mb-offset-@{index} {
+		margin-left: @columnWidth * @index;
+	}
+	.offset(@index - 1);
+}
+.offset (0) {}
+.offset (@columns);
+
+
+// Pull
+
+.pull (@index) when (@index > -1) {
+	.col-mb-pull-@{index} {
+		right: @columnWidth * @index;
+	}
+	.pull(@index - 1);
+}
+.pull (0) {}
+.pull (@columns);
+
+
+// Push
+
+.push (@index) when (@index > -1) {
+	.col-mb-push-@{index} {
+		left: @columnWidth * @index;
+	}
+	.push(@index - 1);
+}
+.push (0) {}
+.push (@columns);
 
 
 //	
