@@ -1,18 +1,17 @@
 /*!
- * Fluidable Grid System 1.3
+ * Fluidable Grid System 1.4
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 31.05.2016
+ * Date: 13.11.2017
  * Converted to SASS by Rory Pickering - rorypickering.co.uk
  * Date converted: 8.11.2016
  */
 
 
-//  ------------------------------------------
+//  
 //	Config
-//  ------------------------------------------
-
+//  
 
 // Grid
 
@@ -30,10 +29,9 @@ $screenDesktop: 992px;
 $screenLarge:   1200px;
 
 
-//  ------------------------------------------
-//  Mixins
-//  ------------------------------------------
-
+//  
+//  Utils
+//  
 
 // Positioning
 
@@ -52,18 +50,23 @@ $screenLarge:   1200px;
 }
 
 
-//  ------------------------------------------
+//
 //  Mobile and up
-//  ------------------------------------------
-
+//
 
 [class*="col-fixed-"] {
   float: left;
   width: 100%;
 }
 
+.container {
+	padding-right: $gutterWidth / 2;
+	padding-left: $gutterWidth / 2;
+}
+
 .col-group {
-	padding: 0 $gutterWidth;
+	margin-right: $gutterWidth / -2;
+	margin-left: $gutterWidth / -2;
 	@include clear();
 }
 
@@ -76,6 +79,11 @@ $screenLarge:   1200px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+.col-group [class*="col-"]:not(.col-group) {
+	padding-right: $gutterWidth / 2;
+	padding-left: $gutterWidth / 2;
 }
 
 .col-group [class*="push-"],
@@ -96,11 +104,32 @@ $screenLarge:   1200px;
 
 }
 
+@for $index from 0 through $columns {
 
-//	------------------------------------------
+		// Offset
+
+		.col-mb-offset-#{$index} {
+			margin-left: $columnWidth * $index;
+		}
+
+		// Pull
+		
+		.col-mb-pull-#{$index} {
+			right: $columnWidth * $index;
+		}
+
+		// Push
+
+		.col-mb-push-#{$index} {
+			left: $columnWidth * $index;
+		}
+
+	}
+
+
+//	
 //	Tablet and up
-//  ------------------------------------------
-
+//  
 
 @media (min-width: $screenTablet) {
 
@@ -156,9 +185,9 @@ $screenLarge:   1200px;
 }
 
 
-//	------------------------------------------
+//	
 //	Desktop and up
-//  ------------------------------------------
+//  
 
 
 @media (min-width: $screenDesktop) {
@@ -205,10 +234,9 @@ $screenLarge:   1200px;
 }
 
 
-//	------------------------------------------
+//
 //	Large desktop and up
-//  ------------------------------------------
-
+//
 
 @media (min-width: $screenLarge) {
 
@@ -216,7 +244,6 @@ $screenLarge:   1200px;
 		max-width: $screenLarge  - ($gutterWidth * 2);
 		@include center-block();
 	}
-
 
 	@for $index from 1 through $columns {
 
@@ -230,7 +257,6 @@ $screenLarge:   1200px;
 		}
 
 	}
-
 
 	@for $index from 0 through $columns {
 		
@@ -256,10 +282,9 @@ $screenLarge:   1200px;
 }
 
 
-//  ------------------------------------------
+//  
 //	Fixed aspect ratio columns
-//  ------------------------------------------
-
+// 
 
 .col-fixed-hd,
 .col-fixed-landscape,
