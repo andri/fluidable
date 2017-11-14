@@ -1,9 +1,9 @@
 /*!
- * Fluidable Grid System 1.4
+ * Fluidable Grid System 1.4.1
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 13.11.2017
+ * Date: 17.11.2017
  */
 .center-block {
   margin: 0 auto;
@@ -39,7 +39,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.col-group [class*="col-"]:not(.col-group) {
+.col-group [class*="col-"]:not(.col-group):not(.col-content) {
   padding-right: 18px;
   padding-left: 18px;
 }

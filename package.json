@@ -1,6 +1,6 @@
 {
   "name": "fluidable",
-  "version": "1.4",
+  "version": "1.4.1",
   "description": "Lightweight, responsive, mobile first grid system",
   "main": "fluidable.less",
   "repository": {
