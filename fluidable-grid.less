@@ -14,16 +14,15 @@
 		flex-wrap: wrap;
 	}
 	& when not (@flex = true) {
-		//padding: 0 @gutter;
 		.clear();
 	}
 }
 
 [class*="col-"] {
 	min-height: 1px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	padding-right: @gutter / 2;
+	padding-left: @gutter / 2;
 	& when (@flex = true) {
 		flex: 0 0 100%;
 	}
@@ -41,30 +40,29 @@
 
 // Columns
 
-.createbreakpoints(@x:2) when(@x <= length(@breakPoints)) {
+.breakpoints(@x:1) when(@x <= length(@breakPoints)) {
     @name: extract(extract(@breakPoints, @x),1);
     @media (min-width: extract(extract(@breakPoints, @x),2)) {
 		.container {
-			max-width: extract(extract(@breakPoints, @x),2) - (@gutter * 2);
+			& when (@x >= 2) {
+				max-width: extract(extract(@breakPoints, @x),2) - (@gutter * 2);	
+			}
 			.center-block();
 		}
-    	.createcolclasses(@y:1) when(@y <= @columns) {
+    	.columns(@y:1) when(@y <= @columns) {
     		.col-@{name}-@{y} {
     			& when (@flex = true) {
-					flex: 0 0 calc((@width * @y) ~"-" @gutter);	
-					margin: 0 @gutter / 2;
+					flex-basis: @width * @y;
 				}
 				& when not (@flex = true) {
 					width: @width * @y;
 					float: left;
-					padding-right: @gutter / 2;
-					padding-left: @gutter / 2;
 				}
     		}
-    		.createcolclasses((@y + 1));
+    		.columns((@y + 1));
     	}
-    	.createcolclasses();
-    	.createpullpushclasses(@y:0) when(@y <= @columns) {
+    	.columns();
+    	.push(@y:0) when(@y <= @columns) {
     		.col-@{name}-offset-@{y} {
  				margin-left: @width * @y;
  			}
@@ -74,13 +72,13 @@
 			.col-@{name}-push-@{y} {
 				left: @width * @y;
 			}
-    		.createpullpushclasses((@y + 1));
+    		.push((@y + 1));
     	}
-    	.createpullpushclasses();
+    	.push();
 	}
-    .createbreakpoints((@x + 1));
+    .breakpoints((@x + 1));
 }
-.createbreakpoints();
+.breakpoints();
 
 // Auto
 

@@ -3,107 +3,270 @@
  *
  * Creator: Andri Sigurðsson
  * Site: http://fluidable.com
- * Date: 13.11.2015
+ * Date: 14.11.2017
  */
-.group {
-  margin-right: -16px;
-  margin-left: -16px;
+[class*="col-fixed-"] {
+  float: left;
+  width: 100%;
 }
-.group:after {
-  display: table;
-  clear: both;
-  content: " ";
+.col-fixed-hd,
+.col-fixed-landscape,
+.col-fixed-square,
+.col-fixed-portrait {
+  position: relative;
+}
+.col-fixed-hd:before,
+.col-fixed-landscape:before,
+.col-fixed-square:before,
+.col-fixed-portrait:before {
+  content: "";
+  display: block;
+}
+.col-fixed-hd .col-content,
+.col-fixed-landscape .col-content,
+.col-fixed-square .col-content,
+.col-fixed-portrait .col-content {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  bottom: 0;
+  left: 9px;
+  padding: 0;
+}
+.col-fixed-hd:before {
+  margin-top: 56.25%;
+}
+.col-fixed-landscape:before {
+  margin-top: 75%;
+}
+.col-fixed-square:before {
+  margin-top: 100%;
+}
+.col-fixed-portrait:before {
+  margin-top: 133.33333333%;
+}
+.center-block {
+  margin: 0 auto;
+}
+.group {
+  margin-right: -9px;
+  margin-left: -9px;
+  display: flex;
+  flex-wrap: wrap;
 }
 [class*="col-"] {
   min-height: 1px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding-right: 9px;
+  padding-left: 9px;
+  flex: 0 0 100%;
 }
 .group [class*="push-"],
 .group [class*="pull-"] {
   position: relative;
 }
 .container {
-  padding-right: 32px;
-  padding-left: 32px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+@media (min-width: 0px) {
+  .container {
+    margin: 0 auto;
+  }
+  .col-mb-1 {
+    flex-basis: 8.33333333%;
+  }
+  .col-mb-2 {
+    flex-basis: 16.66666667%;
+  }
+  .col-mb-3 {
+    flex-basis: 25%;
+  }
+  .col-mb-4 {
+    flex-basis: 33.33333333%;
+  }
+  .col-mb-5 {
+    flex-basis: 41.66666667%;
+  }
+  .col-mb-6 {
+    flex-basis: 50%;
+  }
+  .col-mb-7 {
+    flex-basis: 58.33333333%;
+  }
+  .col-mb-8 {
+    flex-basis: 66.66666667%;
+  }
+  .col-mb-9 {
+    flex-basis: 75%;
+  }
+  .col-mb-10 {
+    flex-basis: 83.33333333%;
+  }
+  .col-mb-11 {
+    flex-basis: 91.66666667%;
+  }
+  .col-mb-12 {
+    flex-basis: 100%;
+  }
+  .col-mb-offset-0 {
+    margin-left: 0%;
+  }
+  .col-mb-pull-0 {
+    right: 0%;
+  }
+  .col-mb-push-0 {
+    left: 0%;
+  }
+  .col-mb-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .col-mb-pull-1 {
+    right: 8.33333333%;
+  }
+  .col-mb-push-1 {
+    left: 8.33333333%;
+  }
+  .col-mb-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .col-mb-pull-2 {
+    right: 16.66666667%;
+  }
+  .col-mb-push-2 {
+    left: 16.66666667%;
+  }
+  .col-mb-offset-3 {
+    margin-left: 25%;
+  }
+  .col-mb-pull-3 {
+    right: 25%;
+  }
+  .col-mb-push-3 {
+    left: 25%;
+  }
+  .col-mb-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .col-mb-pull-4 {
+    right: 33.33333333%;
+  }
+  .col-mb-push-4 {
+    left: 33.33333333%;
+  }
+  .col-mb-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .col-mb-pull-5 {
+    right: 41.66666667%;
+  }
+  .col-mb-push-5 {
+    left: 41.66666667%;
+  }
+  .col-mb-offset-6 {
+    margin-left: 50%;
+  }
+  .col-mb-pull-6 {
+    right: 50%;
+  }
+  .col-mb-push-6 {
+    left: 50%;
+  }
+  .col-mb-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .col-mb-pull-7 {
+    right: 58.33333333%;
+  }
+  .col-mb-push-7 {
+    left: 58.33333333%;
+  }
+  .col-mb-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .col-mb-pull-8 {
+    right: 66.66666667%;
+  }
+  .col-mb-push-8 {
+    left: 66.66666667%;
+  }
+  .col-mb-offset-9 {
+    margin-left: 75%;
+  }
+  .col-mb-pull-9 {
+    right: 75%;
+  }
+  .col-mb-push-9 {
+    left: 75%;
+  }
+  .col-mb-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .col-mb-pull-10 {
+    right: 83.33333333%;
+  }
+  .col-mb-push-10 {
+    left: 83.33333333%;
+  }
+  .col-mb-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .col-mb-pull-11 {
+    right: 91.66666667%;
+  }
+  .col-mb-push-11 {
+    left: 91.66666667%;
+  }
+  .col-mb-offset-12 {
+    margin-left: 100%;
+  }
+  .col-mb-pull-12 {
+    right: 100%;
+  }
+  .col-mb-push-12 {
+    left: 100%;
+  }
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 704px;
+    max-width: 732px;
     margin: 0 auto;
   }
   .col-tb-1 {
-    width: 8.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 8.33333333%;
   }
   .col-tb-2 {
-    width: 16.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 16.66666667%;
   }
   .col-tb-3 {
-    width: 25%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 25%;
   }
   .col-tb-4 {
-    width: 33.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 33.33333333%;
   }
   .col-tb-5 {
-    width: 41.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 41.66666667%;
   }
   .col-tb-6 {
-    width: 50%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 50%;
   }
   .col-tb-7 {
-    width: 58.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 58.33333333%;
   }
   .col-tb-8 {
-    width: 66.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 66.66666667%;
   }
   .col-tb-9 {
-    width: 75%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 75%;
   }
   .col-tb-10 {
-    width: 83.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 83.33333333%;
   }
   .col-tb-11 {
-    width: 91.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 91.66666667%;
   }
   .col-tb-12 {
-    width: 100%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 100%;
   }
   .col-tb-offset-0 {
     margin-left: 0%;
@@ -225,80 +388,44 @@
 }
 @media (min-width: 992px) {
   .container {
-    max-width: 928px;
+    max-width: 956px;
     margin: 0 auto;
   }
   .col-dt-1 {
-    width: 8.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 8.33333333%;
   }
   .col-dt-2 {
-    width: 16.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 16.66666667%;
   }
   .col-dt-3 {
-    width: 25%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 25%;
   }
   .col-dt-4 {
-    width: 33.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 33.33333333%;
   }
   .col-dt-5 {
-    width: 41.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 41.66666667%;
   }
   .col-dt-6 {
-    width: 50%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 50%;
   }
   .col-dt-7 {
-    width: 58.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 58.33333333%;
   }
   .col-dt-8 {
-    width: 66.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 66.66666667%;
   }
   .col-dt-9 {
-    width: 75%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 75%;
   }
   .col-dt-10 {
-    width: 83.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 83.33333333%;
   }
   .col-dt-11 {
-    width: 91.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 91.66666667%;
   }
   .col-dt-12 {
-    width: 100%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 100%;
   }
   .col-dt-offset-0 {
     margin-left: 0%;
@@ -420,80 +547,44 @@
 }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1136px;
+    max-width: 1164px;
     margin: 0 auto;
   }
   .col-ld-1 {
-    width: 8.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 8.33333333%;
   }
   .col-ld-2 {
-    width: 16.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 16.66666667%;
   }
   .col-ld-3 {
-    width: 25%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 25%;
   }
   .col-ld-4 {
-    width: 33.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 33.33333333%;
   }
   .col-ld-5 {
-    width: 41.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 41.66666667%;
   }
   .col-ld-6 {
-    width: 50%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 50%;
   }
   .col-ld-7 {
-    width: 58.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 58.33333333%;
   }
   .col-ld-8 {
-    width: 66.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 66.66666667%;
   }
   .col-ld-9 {
-    width: 75%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 75%;
   }
   .col-ld-10 {
-    width: 83.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 83.33333333%;
   }
   .col-ld-11 {
-    width: 91.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 91.66666667%;
   }
   .col-ld-12 {
-    width: 100%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 100%;
   }
   .col-ld-offset-0 {
     margin-left: 0%;
@@ -615,80 +706,44 @@
 }
 @media (min-width: 1600px) {
   .container {
-    max-width: 1536px;
+    max-width: 1564px;
     margin: 0 auto;
   }
   .col-el-1 {
-    width: 8.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 8.33333333%;
   }
   .col-el-2 {
-    width: 16.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 16.66666667%;
   }
   .col-el-3 {
-    width: 25%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 25%;
   }
   .col-el-4 {
-    width: 33.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 33.33333333%;
   }
   .col-el-5 {
-    width: 41.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 41.66666667%;
   }
   .col-el-6 {
-    width: 50%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 50%;
   }
   .col-el-7 {
-    width: 58.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 58.33333333%;
   }
   .col-el-8 {
-    width: 66.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 66.66666667%;
   }
   .col-el-9 {
-    width: 75%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 75%;
   }
   .col-el-10 {
-    width: 83.33333333%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 83.33333333%;
   }
   .col-el-11 {
-    width: 91.66666667%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 91.66666667%;
   }
   .col-el-12 {
-    width: 100%;
-    float: left;
-    padding-right: 16px;
-    padding-left: 16px;
+    flex-basis: 100%;
   }
   .col-el-offset-0 {
     margin-left: 0%;
@@ -808,51 +863,11 @@
     left: 100%;
   }
 }
+.col-auto {
+  flex: 1 0 auto;
+}
 .clear:after {
   display: table;
   clear: both;
   content: " ";
-}
-[class*="col-fixed-"] {
-  float: left;
-  width: 100%;
-}
-.col-fixed-hd,
-.col-fixed-landscape,
-.col-fixed-square,
-.col-fixed-portrait {
-  position: relative;
-}
-.col-fixed-hd:before,
-.col-fixed-landscape:before,
-.col-fixed-square:before,
-.col-fixed-portrait:before {
-  content: "";
-  display: block;
-}
-.col-fixed-hd .col-content,
-.col-fixed-landscape .col-content,
-.col-fixed-square .col-content,
-.col-fixed-portrait .col-content {
-  position: absolute;
-  top: 0;
-  right: 16px;
-  bottom: 0;
-  left: 16px;
-  padding: 0;
-}
-.col-fixed-hd:before {
-  margin-top: 56.25%;
-}
-.col-fixed-landscape:before {
-  margin-top: 75%;
-}
-.col-fixed-square:before {
-  margin-top: 100%;
-}
-.col-fixed-portrait:before {
-  margin-top: 133.33333333%;
-}
-.center-block {
-  margin: 0 auto;
 }
