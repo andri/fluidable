@@ -4,7 +4,7 @@ Use standalone with your custom CSS, reset styles and mix-ins.
 
 ## Docs
 
-Read more at http://fluidable.com
+Read more at https://fluidable.firebaseapp.com/ 
 
 ## License
 
