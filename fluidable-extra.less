@@ -1,54 +1,29 @@
 //
-// Fixed aspect ratio columns
+//	Extra 
 //
 
-[class*="col-fixed-"] {
-  float: left;
-  width: 100%;
-}
+// Aspect ratio
 
-.col-fixed-hd,
-.col-fixed-landscape,
-.col-fixed-square,
-.col-fixed-portrait {
-	position: relative;
+.aspectratios(@x:1) when(@x <= length(@aspectratios)) {
+	@name: extract(extract(@aspectratios, @x),1);
+	@size: extract(extract(@aspectratios, @x),2);
+	.-ratio-@{name} {
+		position: relative;
+		width: 100%;
+		& when not (@flex = true) {
+			float: left;
+		}
+		&:before {
+			content: " ";
+			display: block;
+			margin-top: @size;
+		}
+		.@{namespace}content {
+			position: absolute;
+			top: 0; right: @gutter / 2; bottom: 0; left: @gutter / 2;
+			padding: 0;
+		}
+	}
+	.aspectratios((@x + 1));
 }
-
-.col-fixed-hd:before,
-.col-fixed-landscape:before,
-.col-fixed-square:before,
-.col-fixed-portrait:before {
-	content: "";
-	display: block;
-}
-
-.col-fixed-hd .col-content, 
-.col-fixed-landscape .col-content, 
-.col-fixed-square .col-content, 
-.col-fixed-portrait .col-content {
-	position: absolute;
-	top: 0; right: @gutter / 2; bottom: 0; left: @gutter / 2;
-	padding: 0;
-}
-
-.col-fixed-hd:before {
-	margin-top: 56.25%;
-}
-
-.col-fixed-landscape:before {
-	margin-top: 75%;
-}
-
-.col-fixed-square:before {
-	margin-top: 100%;
-}
-
-.col-fixed-portrait:before {
-	margin-top: 133.33333333%;
-}
-
-// Positioning
-
-.center-block {
-	margin: 0 auto;
-}
+.aspectratios();

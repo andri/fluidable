@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,400,300,800|Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fluidable &mdash; CSS Grid System</title>
+
+	<link rel="stylesheet" href="/css/fluidable/fluidable-sass.css" type="text/css" media="screen" />
+
+	<style>
+
+		html, body {
+			padding: 0;
+			margin: 0;
+		}
+
+		.item {
+			margin-bottom: 36px;
+			
+		}
+
+		.item .item {
+			margin-bottom: 0;
+		}
+
+		.item .col-content {
+			background: rgba(208, 208, 200, 0.5);
+		}
+
+		.item p {
+			margin: 0;
+			padding: 0.5rem;
+			background: rgba(208, 208, 200, 0.5);
+		}
+
+		.item .col-content p {
+			background: transparent;
+		}
+
+	</style>
+	
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+</head>
+<body>
+
+<div class="section testgrid">
+
+		<div class="container">
+		
+			<div class="col-group">
+
+				<div class="col-mb-12">
+					<h1>Mobile grid</h1>
+				</div>
+
+				<div class="item col-mb-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-mb-8">
+					<p>8</p>
+				</div>
+
+				<div class="item col-mb-8">
+					<p>8</p>
+				</div>
+
+				<div class="item col-mb-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-mb-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-mb-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-mb-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-mb-7">
+					<p>7</p>
+				</div>
+
+				<div class="item col-mb-5">
+					<p>5</p>
+				</div>
+
+				<div class="item col-mb-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-mb-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-mb-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-mb-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-mb-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-1">
+					<p>1</p>
+				</div>
+
+				<div class="item col-mb-1">
+					<p>1</p>
+				</div>
+
+				<div class="item col-mb-1">
+					<p>1</p>
+				</div>
+
+				<div class="item col-mb-4">
+					
+					<div class="col-group">
+						
+						<div class="item col-mb-6">
+							<p>4 / 6</p>
+						</div>
+
+						<div class="item col-mb-6">
+							<p>4 / 6</p>
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="section testgrid">
+
+		<div class="container">
+		
+			<div class="col-group">
+
+				<div class="col-12">
+					<h1>Desktop grid</h1>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-8">
+					<p>8</p>
+				</div>
+
+				<div class="item col-8">
+					<p>8</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-7">
+					<p>7</p>
+				</div>
+
+				<div class="item col-5">
+					<p>5</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+
+				<div class="item col-1">
+					<p>1</p>
+				</div>
+
+				<div class="item col-1">
+					<p>1</p>
+				</div>
+
+				<div class="item col-1">
+					<p>1</p>
+				</div>
+
+			
+				<div class="item col-1">
+					<p>1</p>
+				</div>
+
+				<div class="item col-8">
+					
+					<div class="col-group">
+						
+						<div class="item col-6">
+							<p>8 / 6</p>
+						</div>
+
+						<div class="item col-6">
+								
+							<div class="col-group">
+								
+								<div class="item col-6">
+									<p>6 / 6</p>
+								</div>
+
+								<div class="item col-6">
+									<p>6 / 6</p>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="section testgrid">
+
+		<div class="container">
+		
+			<div class="col-group">
+
+				<div class="col-mb-12">
+					<h1>Mobile grid – Offset</h1>
+				</div>
+
+				<div class="item col-mb-2 col-mb-offset-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-mb-8">
+					<p>8</p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="section testgrid">
+
+		<div class="container">
+		
+			<div class="col-group">
+
+				<div class="col-12">
+					<h1>Desktop grid – Offset</h1>
+				</div>
+
+				<div class="item col-8 col-offset-2">
+					<p>8</p>
+				</div>
+
+				<div class="item col-2">
+					<p>2</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-4">
+					<p>4</p>
+				</div>
+
+				<div class="item col-7">
+					<p>7</p>
+				</div>
+
+				<div class="item col-5">
+					<p>5</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+
+				<div class="item col-3">
+					<p>3</p>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="section testgrid">
+
+		<div class="container">
+		
+			<div class="col-group">
+
+				<div class="col-mb-12">
+					<h1>Fixed ratio</h1>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-hd">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-hd">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-hd">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-landscape">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-landscape">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+				
+				<div class="item col-mb-4 col-fixed-landscape">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-square">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-square">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+				
+				<div class="item col-mb-4 col-fixed-square">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-portrait">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item col-mb-4 col-fixed-portrait">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+				
+				<div class="item col-mb-4 col-fixed-portrait">
+					<div class="col-content">
+						<p>4</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	
+</body>
+</html>

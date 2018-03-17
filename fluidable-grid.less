@@ -4,55 +4,74 @@
 
 @width: 100%/@columns;
 
-// Groups
-
-.group {
+.@{namespace}grid {
 	margin-right: @gutter / -2;
 	margin-left: @gutter / -2;
 	& when (@flex = true) {
 		display: flex;
 		flex-wrap: wrap;
+		&.-align-center {
+			justify-content: center;
+		}
+		&.-align-left {
+			justify-content: start;
+		}
+		&.-align-right {
+			justify-content: end;
+		}
 	}
 	& when not (@flex = true) {
 		.clear();
 	}
+	&.-gutter-none {
+		margin-right: 0;
+		margin-left: 0;
+		.fl--cell {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
 }
 
-[class*="col-"] {
+// Section
+
+.@{namespace}section {
+
+}
+
+// Container
+
+.@{namespace}container {
+	padding-right: @gutter;
+	padding-left: @gutter;
+}
+
+// Cells and breakpoints
+
+.@{namespace}cell {
 	min-height: 1px;
 	box-sizing: border-box;
 	padding-right: @gutter / 2;
 	padding-left: @gutter / 2;
 	& when (@flex = true) {
-		flex: 0 0 100%;
+		//flex: 0 0 100%;
+		width: 100%;
 	}
 }
-
-.group [class*="push-"],
-.group [class*="pull-"] {
-	position: relative;
-}
-
-.container {
-	padding-right: @gutter;
-	padding-left: @gutter;
-}
-
-// Columns
 
 .breakpoints(@x:1) when(@x <= length(@breakPoints)) {
     @name: extract(extract(@breakPoints, @x),1);
     @media (min-width: extract(extract(@breakPoints, @x),2)) {
-		.container {
+		.@{namespace}container {
 			& when (@x >= 2) {
 				max-width: extract(extract(@breakPoints, @x),2) - (@gutter * 2);	
 			}
 			.center-block();
 		}
     	.columns(@y:1) when(@y <= @columns) {
-    		.col-@{name}-@{y} {
+    		.-@{name}-@{y} {
     			& when (@flex = true) {
-					flex-basis: @width * @y;
+					width: @width * @y;
 				}
 				& when not (@flex = true) {
 					width: @width * @y;
@@ -62,30 +81,44 @@
     		.columns((@y + 1));
     	}
     	.columns();
-    	.push(@y:0) when(@y <= @columns) {
-    		.col-@{name}-offset-@{y} {
+    	.variations(@y:0) when(@y <= @columns) {
+    		.-@{name}-offset-@{y} {
  				margin-left: @width * @y;
  			}
- 			.col-@{name}-pull-@{y} {
+ 			.-@{name}-pull-@{y} {
+				position: relative;
 				right: @width * @y;
 			}
-			.col-@{name}-push-@{y} {
+			.-@{name}-push-@{y} {
+				position: relative;
 				left: @width * @y;
 			}
-    		.push((@y + 1));
+    		.variations((@y + 1));
     	}
-    	.push();
+		.variations();
+		.-@{name}-auto {
+			& when (@flex = true) {
+				flex: 1 0 auto;
+			}
+		}
 	}
     .breakpoints((@x + 1));
 }
 .breakpoints();
 
-// Auto
 
-.col-auto {
-	& when (@flex = true) {
-		flex: 1 0 auto;
-	}
+// Align center
+
+.-align-center {
+	margin: 0 auto;
+}
+
+
+
+// Flex
+
+.-mode-flex {
+	display: flex;
 }
 
 // Clear
@@ -96,4 +129,8 @@
     	clear: both;
     	content: " ";
 	}
+}
+
+.center-block {
+	margin: 0 auto;
 }

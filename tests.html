@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,400,300,800|Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fluidable &mdash; CSS Grid System</title>
+
+	<link rel="stylesheet" href="/css/fluidable/fluidable.css" type="text/css" media="screen, projection" />
+
+	<style>
+
+		html, body {
+			padding: 0;
+			margin: 0;
+		}
+
+		.item {
+			margin-bottom: 1rem;
+		}
+
+		.item .item {
+			margin-bottom: 0;
+		}
+
+		.item p {
+			background: #182c4b;
+			opacity: 0.35;
+			height: 2rem;
+			line-height: 2rem;
+			margin: 0;
+			text-indent: 0.5rem;
+			overflow: hidden;
+			white-space: nowrap;
+			color: #fff;
+		}
+
+		.item .fl--content p {
+			background: transparent;
+		}
+
+		.-align-center p {
+			overflow: visible;
+			white-space: normal;
+			height: auto;
+			text-indent: 0;
+			padding: 0.5rem;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		.-gutter-none .item {
+			margin: 0;
+		}
+
+	</style>
+	
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+</head>
+<body>
+
+	<div class="fl--section testgrid">
+
+		<div class="fl--container">
+		
+			<div class="fl--grid -align-center">
+
+				<div class="fl--cell -mobile-12">
+					<h1>Option -align-center</h1>
+				</div>
+
+				<div class="item fl--cell -mobile-3">
+					<p>Duis in condimentum lectus, quis hendrerit arcu. Donec facilisis, dolor eu pellentesque volutpat, neque sapien faucibus ligula, at sodales felis erat vitae libero. Sed vitae ipsum sem.</p>
+				</div>
+
+				<div class="item fl--cell -mobile-6">
+					<p>Nam eu suscipit turpis.</p>
+				</div>
+
+				<div class="item fl--cell -mobile-6">
+					<p>Curabitur et ultricies ipsum, vitae bibendum nunc. Nulla ullamcorper varius ornare. Duis vel facilisis tortor. Etiam fringilla lectus scelerisque lacus scelerisque sollicitudin.</p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="fl--section testgrid">
+
+		<div class="fl--container">
+		
+			<div class="fl--grid -gutter-none">
+
+				<div class="fl--cell -mobile-12">
+					<h1>Option -gutter-none</h1>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-8">
+					<p>8</p>
+				</div>
+
+				<div class="item fl--cell -mobile-8">
+					<p>8</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="fl--section testgrid">
+
+		<div class="fl--container">
+		
+			<div class="fl--grid">
+
+				<div class="fl--cell -mobile-12">
+					<h1>Mobile - MB</h1>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-8">
+					<p>8</p>
+				</div>
+
+				<div class="item fl--cell -mobile-8">
+					<p>8</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -mobile-7">
+					<p>7</p>
+				</div>
+
+				<div class="item fl--cell -mobile-5">
+					<p>5</p>
+				</div>
+
+				<div class="item fl--cell -mobile-3">
+					<p>3</p>
+				</div>
+
+				<div class="item fl--cell -mobile-3">
+					<p>3</p>
+				</div>
+
+				<div class="item fl--cell -mobile-3">
+					<p>3</p>
+				</div>
+
+				<div class="item fl--cell -mobile-1">
+					<p>1</p>
+				</div>
+
+				<div class="item fl--cell -mobile-1">
+					<p>1</p>
+				</div>
+
+				<div class="item fl--cell -mobile-1">
+					<p>1</p>
+				</div>
+
+				<div class="item fl--cell -mobile-6">
+					
+					<div class="fl--grid">
+						
+						<div class="item fl--cell -mobile-6">
+							<p>6/6</p>
+						</div>
+
+						<div class="item fl--cell -mobile-6">
+							<p>6/6</p>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="item fl--cell -mobile-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -mobile-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -mobile-2 -mobile-auto">
+					<p>2A</p>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+	
+	<div class="fl--section testgrid">
+
+		<div class="fl--container">
+		
+			<div class="fl--grid">
+
+				<div class="fl--cell -tablet-12">
+					<h1>Tablet - TB</h1>
+				</div>
+
+				<div class="item fl--cell -tablet-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -tablet-8">
+					<p>8</p>
+				</div>
+
+				<div class="item fl--cell -tablet-8">
+					<p>8</p>
+				</div>
+
+				<div class="item fl--cell -tablet-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -tablet-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -tablet-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -tablet-4">
+					<p>4</p>
+				</div>
+
+				<div class="item fl--cell -tablet-7">
+					<p>7</p>
+				</div>
+
+				<div class="item fl--cell -tablet-5">
+					<p>5</p>
+				</div>
+
+				<div class="item fl--cell -tablet-3">
+					<p>3</p>
+				</div>
+
+				<div class="item fl--cell -tablet-3">
+					<p>3</p>
+				</div>
+
+				<div class="item fl--cell -tablet-3">
+					<p>3</p>
+				</div>
+
+				<div class="item fl--cell -tablet-3">
+					<p>3</p>
+				</div>
+
+
+				<div class="item fl--cell -tablet-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -tablet-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -tablet-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -tablet-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -tablet-2">
+					<p>2</p>
+				</div>
+
+				<div class="item fl--cell -tablet-2">
+					<p>2</p>
+				</div>
+
+
+				<div class="item fl--cell -tablet-1">
+					<p>1</p>
+				</div>
+
+				<div class="item fl--cell -tablet-6">
+					
+					<div class="fl--grid">
+						
+						<div class="item fl--cell -tablet-6">
+							<p>6N</p>
+						</div>
+
+						<div class="item fl--cell -tablet-6">
+							<p>6N</p>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="item fl--cell -tablet-2 -tablet-auto">
+					<p>2 Auto</p>
+				</div>
+
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="fl--section testgrid">
+
+		<div class="fl--container">
+		
+			<div class="fl--grid">
+
+				<div class="fl--cell -mobile-12">
+					<h1>Fixed ratio</h1>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-hd">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-hd">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-hd">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-landscape">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-landscape">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+				
+				<div class="item fl--cell -mobile-4 -ratio-landscape">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-square">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-square">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+				
+				<div class="item fl--cell -mobile-4 -ratio-square">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-portrait">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="item fl--cell -mobile-4 -ratio-portrait">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+				
+				<div class="item fl--cell -mobile-4 -ratio-portrait">
+					<div class="fl--content">
+						<p>4</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	
+</body>
+</html>
